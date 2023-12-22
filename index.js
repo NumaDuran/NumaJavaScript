@@ -37,13 +37,13 @@ function calcular() {
   historial.push(calculo);
 
   alert("El resultado es: " + resultado);
-
-  mostrarHistorial();
+  mostrarHistorialAlert();
 }
 
-function mostrarHistorial() {
-  console.log("Historial de cálculos:");
+function mostrarHistorialAlert() {
+  let historialStr = "Historial de cálculos:\n";
   historial.forEach(function(calculo, index) {
-    console.log(`Cálculo ${index + 1}: ${calculo.numero1} ${calculo.operacion} ${calculo.numero2} = ${calculo.resultado}`);
+    historialStr += `Cálculo ${index + 1}: ${calculo.numero1} ${calculo.operacion} ${calculo.numero2} = ${calculo.resultado}\n`;
   });
+  alert(historialStr);
 }
