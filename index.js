@@ -1,3 +1,5 @@
+let historial = [];
+
 function calcular() {
   let operacion = prompt("Ingrese la operación (+, -, *, /):");
   let numero1 = parseFloat(prompt("Ingrese el primer número:"));
@@ -25,5 +27,23 @@ function calcular() {
       resultado = "Operación no válida";
   }
 
+  let calculo = {
+    operacion: operacion,
+    numero1: numero1,
+    numero2: numero2,
+    resultado: resultado
+  };
+
+  historial.push(calculo);
+
   alert("El resultado es: " + resultado);
+
+  mostrarHistorial();
+}
+
+function mostrarHistorial() {
+  console.log("Historial de cálculos:");
+  historial.forEach(function(calculo, index) {
+    console.log(`Cálculo ${index + 1}: ${calculo.numero1} ${calculo.operacion} ${calculo.numero2} = ${calculo.resultado}`);
+  });
 }
